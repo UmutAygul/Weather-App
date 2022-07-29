@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  weatherApiBaseUrl: 'https://api.collectapi.com/weather/getWeather?',
+  XRapidAPIHostHeaderName: 'content-type',
+  XRapidAPIHostHeaderValue: 'application/json',
+  XRapidAPIKeyHeaderName: 'authorization',
+  XRapidAPIKeyHeaderValue:'apikey 6H6dLXbBbQ2tlqIBLToaHD:64cqxpW4tPoiKs5jdA85gN',
+  
 };
 
 /*
