@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     MatSelectSearchModule,
     BrowserAnimationsModule,
+    MatSelectModule,
     
 
    

@@ -1,17 +1,24 @@
 <div class="search">
-  <form #form="ngForm" (submit)="onSubmit()">
-    <input type="text" placeholder="Search City" name="city" 
+  <form (submit)="ngOnInit()">
+    <input type="text" name="selectedTeam" 
     [(ngModel)]="selectedTeam">
   </form>
 </div>
 
+
+
+
+
 <div class="col">
-  <p>You select your team {{ selectedTeam }} using change event</p>
+  
     <select #teams (change)="onSelected(teams.value)">
-      <option default>Pick a team</option>
-      <option>ankara</option>
-      <option>izmir</option>
-      <option>Cleveland</option>
+      
+      <option default>Choose city</option>
+      <option>Ankara</option>
+      <option>Istanbul</option>
+      <option>Izmir</option>
+      <option>Van</option>
+      
     </select>
   </div>
 
@@ -21,7 +28,7 @@
     <img src="../assets/cold.jpg"  *ngIf="weatherData.result[0].degree < 20">
     
     <div class="weather-data">
-    <div class="location">{{cityName}}</div>
+    <div class="location">{{selectedTeam}}</div>
     
     <div class="temperature">{{ weatherData.result[0].degree | number: '1.0-0'}}°C</div>
     </div>

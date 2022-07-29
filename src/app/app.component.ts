@@ -7,7 +7,7 @@ import { Subject, Observable } from 'rxjs';
 import { takeUntil, map } from 'rxjs/operators';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
-
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   
@@ -24,36 +24,38 @@ export class AppComponent implements OnInit{
 
 
   constructor(private weatherService: WeatherService){}
-  cityName: string= 'Ankara';
+  cityName: string= this.selectedTeam;
   weatherData?: WeatherData;
 
-  ngOnInit(): void {
+  ngOnInit() {
     
-    this.getWeatherData(this.selectedTeam);
     
+    this.weatherService.getWeatherData(this.selectedTeam)
+   
+    .subscribe({
+      next: (response) => {
+        this.weatherData= response;
+        console.log(response);
+      }
+    });
+  
     
   }
 
 
-onSubmit(){
-  
- this.getWeatherData(this.selectedTeam)
-  
-  
-}
 
- getWeatherData(cityName: string){
+//  getWeatherData(cityName: string){
 
-  this.weatherService.getWeatherData(this.selectedTeam)
+//   this.weatherService.getWeatherData(this.selectedTeam)
    
-  .subscribe({
-    next: (response) => {
-      this.weatherData= response;
-      console.log(response);
-    }
-  });
+//   .subscribe({
+//     next: (response) => {
+//       this.weatherData= response;
+//       console.log(response);
+//     }
+//   });
 
-}
+// }
 
 }
 
