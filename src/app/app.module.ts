@@ -9,6 +9,7 @@ import { MatSelectSearchModule } from 'mat-select-search';
 import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -20,6 +21,8 @@ import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatSelectSearchModule,
+    BrowserAnimationsModule,
     
 
    

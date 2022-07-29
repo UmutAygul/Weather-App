@@ -1,29 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef, NgModule } from '@angular/core';
 import { WeatherData } from './models/weather.module';
 import { WeatherService } from './services/weather.service';
-
+import { FormControl, NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subject, Observable } from 'rxjs';
+import { takeUntil, map } from 'rxjs/operators';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
+  
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 
-
 export class AppComponent implements OnInit{
+  selectedTeam = '';
+	onSelected(value:string): void {
+		this.selectedTeam = value;
+	}
 
 
-
-  constructor(private weatherService: WeatherService){
-
-  }
+  constructor(private weatherService: WeatherService){}
   cityName: string= 'Ankara';
   weatherData?: WeatherData;
 
   ngOnInit(): void {
     
-    this.getWeatherData(this.cityName);
+    this.getWeatherData(this.selectedTeam);
     
     
   }
@@ -31,14 +37,14 @@ export class AppComponent implements OnInit{
 
 onSubmit(){
   
- this.getWeatherData(this.cityName)
+ this.getWeatherData(this.selectedTeam)
   
   
 }
 
  getWeatherData(cityName: string){
 
-  this.weatherService.getWeatherData(cityName)
+  this.weatherService.getWeatherData(this.selectedTeam)
    
   .subscribe({
     next: (response) => {
@@ -50,3 +56,5 @@ onSubmit(){
 }
 
 }
+
+
