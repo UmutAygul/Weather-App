@@ -17,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 })
 
 export class AppComponent implements OnInit{
-  selectedTeam = '';
+  selectedTeam = 'Ankara';
 	onSelected(value:string): void {
 		this.selectedTeam = value;
 	}
@@ -25,6 +25,7 @@ export class AppComponent implements OnInit{
 
   constructor(private weatherService: WeatherService){}
   cityName: string= this.selectedTeam;
+  cityName2: string = "";
   weatherData?: WeatherData;
 
   ngOnInit() {
@@ -35,7 +36,8 @@ export class AppComponent implements OnInit{
     .subscribe({
       next: (response) => {
         this.weatherData= response;
-        console.log(response);
+        console.log(this.selectedTeam);
+        
       }
     });
   

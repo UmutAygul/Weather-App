@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatSelectSearchModule } from 'mat-select-search';
-import { Component } from '@angular/core';
-import { ViewChild } from '@angular/core';
-import { DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 
