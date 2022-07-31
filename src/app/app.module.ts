@@ -12,13 +12,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './login/login.component';
 
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    
     MainpageComponent
   ],
   imports: [
@@ -29,7 +30,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
     MatSelectSearchModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    
+    FlexLayoutModule
 
    
     
