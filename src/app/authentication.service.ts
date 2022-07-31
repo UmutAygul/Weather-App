@@ -23,7 +23,7 @@ export class AuthenticationService {
   constructor() { }
   
   login(id, sif) {
-    if (id === 'admin' && sif === 'admin') {
+    if (id === 'umut' && sif === 'umut') {
       sessionStorage.setItem('username', id)
       sessionStorage.setItem('ApiKey',environment.XRapidAPIKeyHeaderValue)
       return true;

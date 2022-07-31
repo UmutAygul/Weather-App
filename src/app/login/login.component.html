@@ -1,21 +1,10 @@
-<!-- <form>
-    <div class="input">
-        <label > Username</label>
-        <input type="text" name="username"[(ngModel)]="username">
-    </div>
-    <div class="input">
-        <label > Passord</label>
-        <input type="password" name="password"[(ngModel)]="password">
-    </div>
-    <div class="input">
-        <input type="submit" (click)="LoginUser"  value="Login">
-    </div>
-</form> -->
+
+<!-- id sif umut -->
 
 
 <div  fxLayoutAlign="center center" fxLayoutFill class="main-div">
     <mat-card (submit)="onSubmit($event)" fxFlex="100">
-        <mat-toolbar color="primary">Login Page</mat-toolbar>
+        <mat-toolbar color="primary">Login Page (id,sif=umut)</mat-toolbar>
         <form fxLayoutAlign="stretch" fxLayout="column">
             <mat-form-field>
                 <input matInput placeholder="Username" id="username">
@@ -25,6 +14,7 @@
         <mat-form-field>
             <input matInput type="password" placeholder="Password" id="password">
         </mat-form-field>
+
         <button mat-raised-button type="submit">Login</button>
         </form>
     </mat-card>
