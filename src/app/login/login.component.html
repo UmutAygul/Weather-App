@@ -14,18 +14,30 @@
 
 
 <div  fxLayoutAlign="center center" fxLayoutFill class="main-div">
-    <mat-card fxFlex="100">
+    <mat-card (submit)="onSubmit($event)" fxFlex="100">
         <mat-toolbar color="primary">Login Page</mat-toolbar>
         <form fxLayoutAlign="stretch" fxLayout="column">
             <mat-form-field>
-                <input matInput placeholder="Username">
+                <input matInput placeholder="Username" id="username">
             
             </mat-form-field>
             
         <mat-form-field>
-            <input matInput type="password" placeholder="Password">
+            <input matInput type="password" placeholder="Password" id="password">
         </mat-form-field>
         <button mat-raised-button type="submit">Login</button>
         </form>
     </mat-card>
 </div>
+
+
+
+
+<!-- <h2>Login</h2>
+<form (submit)="onSubmit($event)">
+    <input type="text" placeholder="Username" id="username">
+    <input type="password" placeholder="Password" id="password">
+    <input type="submit" value="Submit">
+    
+
+</form> -->

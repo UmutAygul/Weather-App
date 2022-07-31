@@ -1,5 +1,3 @@
-import { AppComponent } from "../app.component"
-import { WeatherService } from "../services/weather.service"
 
 export interface WeatherData {
     result: [Result]

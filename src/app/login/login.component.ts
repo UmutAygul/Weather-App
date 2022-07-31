@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {  FormGroup } from '@angular/forms';
+import { AuthenticationService } from '../authentication.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,23 +10,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  returnUrl: string;
+  invalidLogin = false
 
-  username:string;
-  password:string;
+  constructor(
 
-  constructor(private router: Router) { }
+    private router: Router,
+    private authenticationService: AuthenticationService,
+) {}
 
-  ngOnInit(): void {
+    ngOnInit() {
   }
-  LoginUser(){
-    if(this.username == "admin" &&this.password=="admin")
-    {
-      console.log("Helal oglume");
-      this.router.navigate(['/mainpage'])
 
+    onSubmit(event) {
 
-    }
+        const target = event.target
+        if(this.authenticationService.login(target.querySelector('#username').value, target.querySelector('#password').value))
+        {            
+          console.log('Istek basariyla gerceklestirildi')
+          this.router.navigate(['/home'])
+          this.invalidLogin = false
+          this.router.navigate(['/mainpage'])
+        }else{
+          this.invalidLogin = true
+        }
 
-  }
+      }
 
 }
