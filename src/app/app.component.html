@@ -1,19 +1,100 @@
+<!-- nav -->
 
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-nav">
 
+      <a class="nav-item nav-link" routerLink="/login">Login</a>
+      <a class="nav-item nav-link" routerLink="/App">Home</a>
+  </div>
+</nav>
 
-
-
+<!-- main content container -->
 <div class="search">
-  <form (submit)="ngOnInit()">
-    <input type="text" name="selectedTeam" 
-    [(ngModel)]="selectedTeam">
-  </form>
+
+  <select #teams (change)="onSelected(teams.value)">
+    
+    <option default>Ankara</option>
+    <option>Istanbul</option>
+    <option>Izmir</option>
+    <option>Adana</option>
+    <option>Antalya</option>
+    <option>Van</option>
+    <option>Mugla</option>
+    <option>Diyarbakir</option>
+    <option>Karaman</option>
+    <option>Tekirdag</option>
+    <option>Yozgat</option>
+
+    
+  </select>
 </div>
 
 
+<div class="container" *ngIf="weatherData">
+<div class="upper-data">
+  <img src="../assets/hot.jpg" *ngIf="weatherData.result[0].degree >= 20">
+  <img src="../assets/cold.jpg"  *ngIf="weatherData.result[0].degree < 20">
+  
+  <div class="weather-data">
+  <div class="location">{{selectedTeam}}</div>
+  <br />
+  
+  <div class="temperature">{{ weatherData.result[0].degree | number: '1.0-0'}}°C</div>
+  </div>
+</div>
+<div class="lower-data">
+  <div class="more-info-label">
+    More Information
+  </div>
+  <div class="more-info-container">
+    <div class="info-block">
+      <div class="info-block-label">
+        <img src="../assets/temp.png" >
+        <span>min</span>
+      </div>
+      <div class="info-block-value">
+        {{weatherData.result[0].min | number: '1.0-0'}}°C
+      </div>
+    </div>
+    
+    <div class="info-block">
+      <div class="info-block-label">
+        <img src="../assets/temp.png" >
+        <span>max</span>
+      </div>
+      <div class="info-block-value">
+        {{weatherData.result[0].max | number: '1.0-0'}}°C
+      </div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-label">
+        <img src="../assets/humidity.png" >
+        <span>humidity</span>
+      </div>
+      <div class="info-block-value">
+        {{weatherData.result[0].humidity}}%
+      </div>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-label">
+        <img src="../assets/wind.png" >
+        <span>status</span>
+      </div>
+      <div class="info-block-value">
+        {{weatherData.result[0].status}}°C
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
-<div class="selection">
+-->
+
+<!-- 
+<div class="search">
   
     <select #teams (change)="onSelected(teams.value)">
       
@@ -28,8 +109,6 @@
     </select>
   </div>
 
-  
-
 
 <div class="container" *ngIf="weatherData">
   <div class="upper-data">
@@ -37,9 +116,9 @@
     <img src="../assets/cold.jpg"  *ngIf="weatherData.result[0].degree < 20">
     
     <div class="weather-data">
-      
-    <div class="location"> {{selectedTeam}}</div>
+    <div class="location">{{selectedTeam}}</div>
     <br />
+    
     <div class="temperature">{{ weatherData.result[0].degree | number: '1.0-0'}}°C</div>
     </div>
   </div>
@@ -92,71 +171,10 @@
 </div>
 
 
+ -->
 
 
 
 
 
-
-
-
-
-
-<!-- <div class="container">
-  <div class="upper-data">
-    <img src="../assets/cold.jpg" *ngIf="14> 15">
-    <img src="../assets/hot.jpg"  *ngIf="14<=15">
-
-    <div class="weather-data">
-      <div class="location">Wellington</div>
-      <div class="temperature">{{ 14.40 | number: '1.0-0'}}°C</div>
-    </div>
-  </div>
-  <div class="lower-data">
-    <div class="more-info-label">
-      More Information
-    </div>
-    <div class="more-info-container">
-      <div class="info-block">
-        <div class="info-block-label">
-          <img src="../assets/temp.png" >
-          <span>min</span>
-        </div>
-        <div class="info-block-value">
-          10°C
-        </div>
-      </div>
-      
-      <div class="info-block">
-        <div class="info-block-label">
-          <img src="../assets/temp.png" >
-          <span>max</span>
-        </div>
-        <div class="info-block-value">
-          20°C
-        </div>
-      </div>
-
-      <div class="info-block">
-        <div class="info-block-label">
-          <img src="../assets/humidity.png" >
-          <span>humidity</span>
-        </div>
-        <div class="info-block-value">
-          77%
-        </div>
-      </div>
-
-      <div class="info-block">
-        <div class="info-block-label">
-          <img src="../assets/wind.png" >
-          <span>wind</span>
-        </div>
-        <div class="info-block-value">
-          11 km/h
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 <router-outlet></router-outlet>

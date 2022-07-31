@@ -20,6 +20,8 @@ export class AppComponent implements OnInit{
   selectedTeam = 'Ankara';
 	onSelected(value:string): void {
 		this.selectedTeam = value;
+
+    this.ngOnInit()
 	}
 
 
@@ -30,14 +32,15 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     
-    
+
     this.weatherService.getWeatherData(this.selectedTeam)
    
     .subscribe({
+      
       next: (response) => {
+
         this.weatherData= response;
-        console.log(this.selectedTeam);
-        
+        console.log(response);
       }
     });
   

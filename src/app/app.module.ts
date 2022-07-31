@@ -9,10 +9,17 @@ import { MatSelectSearchModule } from 'mat-select-search';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './login/login.component';
+
+import { MainpageComponent } from './mainpage/mainpage.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
