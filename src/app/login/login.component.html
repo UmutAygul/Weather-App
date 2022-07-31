@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
     <div class="input">
         <label > Username</label>
         <input type="text" name="username"[(ngModel)]="username">
@@ -10,4 +10,22 @@
     <div class="input">
         <input type="submit" (click)="LoginUser"  value="Login">
     </div>
-</form>
+</form> -->
+
+
+<div  fxLayoutAlign="center center" fxLayoutFill class="main-div">
+    <mat-card fxFlex="100">
+        <mat-toolbar color="primary">Login Page</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column">
+            <mat-form-field>
+                <input matInput placeholder="Username">
+            
+            </mat-form-field>
+            
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password">
+        </mat-form-field>
+        <button mat-raised-button type="submit">Login</button>
+        </form>
+    </mat-card>
+</div>
