@@ -27,7 +27,7 @@ export class MainpageComponent implements OnInit {
     
   }
   cityName: string= this.selectedTeam;
-  cityName2: string = "";
+  // cityName2: string = "";
   weatherData?: WeatherData;
 
   ngOnInit() {

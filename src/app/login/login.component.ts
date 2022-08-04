@@ -9,11 +9,6 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // loginForm: FormGroup;
-  // loading = false;
-  // submitted = false;
-  // returnUrl: string;
-  // invalidLogin = false
 
   constructor(
 

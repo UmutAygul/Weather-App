@@ -32,7 +32,7 @@ export class AuthenticationService {
     }
   }
 
-  logOut() {
-    sessionStorage.clear();
-  }
+  // logOut() {
+  //   sessionStorage.clear();
+  // }
 }
