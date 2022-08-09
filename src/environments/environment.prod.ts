@@ -21,3 +21,13 @@
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+export const environment = {
+    production: false,
+    weatherApiBaseUrl: 'https://api.collectapi.com/weather/getWeather?',
+    XRapidAPIHostHeaderName: 'content-type',
+    XRapidAPIHostHeaderValue: 'application/json',
+    XRapidAPIKeyHeaderName: 'authorization',
+    XRapidAPIKeyHeaderValue:'apikey 6H6dLXbBbQ2tlqIBLToaHD:64cqxpW4tPoiKs5jdA85gN',
+    
+  };
