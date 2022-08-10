@@ -1,13 +1,8 @@
 import { Component, OnInit,ViewChild,ElementRef, NgModule } from '@angular/core';
 import { WeatherData } from '../models/weather.module';
 import { WeatherService } from '../services/weather.service';
-import { FormControl, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil, map } from 'rxjs/operators';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
-import { MatSelectModule } from '@angular/material/select';
+
 
 
 @Component({
@@ -31,10 +26,12 @@ export class MainpageComponent implements OnInit {
   weatherData?: WeatherData;
 
   ngOnInit() {
+    if(sessionStorage.length == 0){
+      this.router.navigate(['/'])
+    }
+  
     
-
     this.weatherService.getWeatherData(this.selectedTeam)
-   
     .subscribe({
       
       next: (response) => {

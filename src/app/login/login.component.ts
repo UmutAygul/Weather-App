@@ -25,11 +25,10 @@ export class LoginComponent implements OnInit {
         if(this.authenticationService.login(target.querySelector('#username').value, target.querySelector('#password').value))
         {            
           console.log('Istek basariyla gerceklestirildi')
-          // this.router.navigate(['/home'])
-          // this.invalidLogin = false
+
           this.router.navigate(['/mainpage'])
         }else{
-          // this.invalidLogin = true
+
         }
       }
 }

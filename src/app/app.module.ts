@@ -19,8 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-
+import { WeatherService } from './services/weather.service';
 
 
 @NgModule({
@@ -46,7 +45,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

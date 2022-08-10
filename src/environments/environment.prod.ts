@@ -29,5 +29,6 @@ export const environment = {
     XRapidAPIHostHeaderValue: 'application/json',
     XRapidAPIKeyHeaderName: 'authorization',
     XRapidAPIKeyHeaderValue:'apikey 6H6dLXbBbQ2tlqIBLToaHD:64cqxpW4tPoiKs5jdA85gN',
-    
   };
+
+  

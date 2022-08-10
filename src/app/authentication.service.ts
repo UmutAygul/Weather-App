@@ -1,16 +1,3 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthServiceService {
-
-//   constructor(private http:HttpClient) { }
-
-
-  
-// }
 
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -32,7 +19,5 @@ export class AuthenticationService {
     }
   }
 
-  // logOut() {
-  //   sessionStorage.clear();
-  // }
+
 }
