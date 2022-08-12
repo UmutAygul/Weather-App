@@ -1,3 +1,14 @@
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid" style="text-align: center;"  >
+    <!-- Navbar brand -->
+    <button class="log" (click)="this.a.logout()">Logout</button>
+
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
   <div class="search">
   
     <select #teams (change)="onSelected(teams.value)">
@@ -23,8 +34,9 @@
   
   <div class="container" *ngIf="weatherData">
   <div class="upper-data">
-    <img src="../assets/hot.jpg" *ngIf="weatherData.result[0].degree >= 20">
-    <img src="../assets/cold.jpg"  *ngIf="weatherData.result[0].degree < 20">
+    
+    <img src={{weatherData.result[0].icon}} *ngIf="weatherData.result[0].degree >= 20">
+    <img src={{weatherData.result[0].icon}}  *ngIf="weatherData.result[0].degree < 20">
     
     <div class="weather-data">
     <div class="location">{{selectedTeam}}</div>
@@ -41,7 +53,7 @@
       <div class="info-block">
         <div class="info-block-label">
           <img src="../assets/temp.png" >
-          <span>min</span>
+          <span>Minimum</span>
         </div>
         <div class="info-block-value">
           {{weatherData.result[0].min | number: '1.0-0'}}°C
@@ -50,8 +62,9 @@
       
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/temp.png" >
-          <span>max</span>
+          <img src="../assets/temp.png">
+          
+          <span>Maximum</span>
         </div>
         <div class="info-block-value">
           {{weatherData.result[0].max | number: '1.0-0'}}°C
@@ -61,7 +74,7 @@
       <div class="info-block">
         <div class="info-block-label">
           <img src="../assets/humidity.png" >
-          <span>humidity</span>
+          <span>Humidity</span>
         </div>
         <div class="info-block-value">
           {{weatherData.result[0].humidity}}%
@@ -70,23 +83,18 @@
   
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/wind.png" >
-          <span>status</span>
+          <!-- <img src="../assets/wind.png" > -->
+          <span>Status</span>
         </div>
         <div class="info-block-value">
-          {{weatherData.result[0].status}}°C
+          {{weatherData.result[0].description}}
         </div>
       </div>
     </div>
   </div>
   </div>
   
-  
 
-  
-
-
-  
   
   <router-outlet></router-outlet>
   

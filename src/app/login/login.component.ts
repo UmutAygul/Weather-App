@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   }
 
     onSubmit(event) {
-
+      
+      this.router.navigate(['/mainpage'])
         const target = event.target
         if(this.authenticationService.login(target.querySelector('#username').value, target.querySelector('#password').value))
         {            

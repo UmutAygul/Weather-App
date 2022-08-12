@@ -1,5 +1,6 @@
 
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthenticationService {
 
-  constructor() { }
+  constructor(private router: Router) { }
   
   login(id, sif) {
     if (id === 'umut' && sif === 'umut') {
@@ -17,6 +18,10 @@ export class AuthenticationService {
     } else {
       return false;
     }
+  }
+  logout(){
+    sessionStorage.clear();
+    this.router.navigate([""]);
   }
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild,ElementRef, NgModule } from '@angular/core'
 import { WeatherData } from '../models/weather.module';
 import { WeatherService } from '../services/weather.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 
 
@@ -18,18 +19,16 @@ export class MainpageComponent implements OnInit {
 
     this.ngOnInit()
 	}
-  constructor(private weatherService: WeatherService, private router: Router){
+  constructor(public a:AuthenticationService,private weatherService: WeatherService, private router: Router){
     
   }
+
   cityName: string= this.selectedTeam;
-  // cityName2: string = "";
   weatherData?: WeatherData;
 
   ngOnInit() {
-    if(sessionStorage.length == 0){
-      this.router.navigate(['/'])
-    }
-  
+
+
     
     this.weatherService.getWeatherData(this.selectedTeam)
     .subscribe({
@@ -37,7 +36,8 @@ export class MainpageComponent implements OnInit {
       next: (response) => {
 
         this.weatherData= response;
-        console.log(response);
+        console.log(response.result[0])
+        
       }
     });
   
