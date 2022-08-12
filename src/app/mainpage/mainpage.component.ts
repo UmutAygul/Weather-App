@@ -36,7 +36,7 @@ export class MainpageComponent implements OnInit {
       next: (response) => {
 
         this.weatherData= response;
-        console.log(response.result[0])
+        
         
       }
     });
