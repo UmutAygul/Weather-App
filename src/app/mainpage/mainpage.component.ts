@@ -3,6 +3,7 @@ import { WeatherData } from '../models/weather.module';
 import { WeatherService } from '../services/weather.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -29,17 +30,21 @@ export class MainpageComponent implements OnInit {
   ngOnInit() {
 
 
-    
-    this.weatherService.getWeatherData(this.selectedTeam)
+    if(sessionStorage["ApiKey"]==environment.XRapidAPIKeyHeaderValue)
+    {
+          this.weatherService.getWeatherData(this.selectedTeam)
     .subscribe({
-      
       next: (response) => {
 
         this.weatherData= response;
-        
+        // console.log(sessionStorage["ApiKey"])
+        // console.log(environment.XRapidAPIKeyHeaderValue)
+        console.log("Key is true")
         
       }
     });
+    }
+
   
     
   }
